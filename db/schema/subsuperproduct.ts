@@ -12,6 +12,8 @@ const subSuperProduct = pgTable('subsuperproduct', {
     updatedAt: timestamp('updated_at').notNull().defaultNow()
 })
 
+
+
 export type SubSuperProduct = typeof subSuperProduct.$inferSelect;
 export type NewSubSuperProduct = typeof subSuperProduct.$inferInsert;
 
