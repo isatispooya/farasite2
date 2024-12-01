@@ -1,5 +1,5 @@
 import { serial, varchar, text, pgTable, integer, timestamp } from "drizzle-orm/pg-core";
-import settingSite from "./setting_site";
+import {settingSite} from "./setting_site";
 import { relations } from "drizzle-orm";
 
 //لیست ویژگی ها 

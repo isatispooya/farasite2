@@ -1,6 +1,6 @@
 import { pgTable, varchar, text, timestamp, serial, integer } from "drizzle-orm/pg-core";
 import { relations } from "drizzle-orm";
-import settingSite from "./setting_site";
+import {settingSite} from "./setting_site";
 
 //تماس با ما
 const contactUs = pgTable('contact_us', {

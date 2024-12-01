@@ -1,12 +1,12 @@
 import { pgTable, varchar, serial, timestamp, integer } from "drizzle-orm/pg-core";
 import { relations } from 'drizzle-orm';
-import settingSite from "./setting_site";
+import { settingSite } from './setting_site';
 
 
 //آدرس های شعب
 const branch = pgTable('branches', {
     id: serial('id').primaryKey(),
-    settingSite: integer('setting_site').references(() => settingSite.id),
+    settingSiteId: integer('setting_site_id').references(() => settingSite.id),
     name: varchar('name', { length: 255 }).notNull(),
     province: varchar('province', { length: 100 }).notNull(),
     city: varchar('city', { length: 100 }).notNull(),
@@ -20,7 +20,7 @@ const branch = pgTable('branches', {
 
 export const branchRelations = relations(branch, ({ one }) => ({
     settingSite: one(settingSite, {
-        fields: [branch.settingSite],
+        fields: [branch.settingSiteId],
         references: [settingSite.id],
     }),
 }));

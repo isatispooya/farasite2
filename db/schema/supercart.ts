@@ -1,5 +1,5 @@
 import { pgTable, text, varchar, serial, timestamp, integer } from "drizzle-orm/pg-core";
-import settingSite from "./setting_site";
+import {settingSite} from "./setting_site";
 import { relations } from "drizzle-orm";
 
 //سوپر کارت

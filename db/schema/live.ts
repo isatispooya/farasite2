@@ -2,7 +2,7 @@
 
 
 import { pgTable, varchar, text, serial, integer, timestamp } from "drizzle-orm/pg-core";
-import settingSite from "./setting_site";
+import {settingSite} from "./setting_site";
 import { relations } from "drizzle-orm";
 
 //ویدئو های زنده

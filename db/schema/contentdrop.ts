@@ -1,5 +1,6 @@
 import { pgTable, text, serial } from "drizzle-orm/pg-core";
 
+//محتوای درباره ما
 const contentDrop = pgTable('contentdrop', {
     id: serial('id').primaryKey(),
     title: text('title').notNull(),

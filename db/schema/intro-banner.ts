@@ -1,7 +1,8 @@
 import { pgTable, text, serial, integer } from "drizzle-orm/pg-core";
-import settingSite from "./setting_site";
+import {settingSite} from "./setting_site";
 import { relations } from "drizzle-orm";
 
+//بنر اولین صفحه
 const introBanner = pgTable('intro_banner', {
     id: serial('id').primaryKey(),
     settingSite: integer('setting_site').references(() => settingSite.id),

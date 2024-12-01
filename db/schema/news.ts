@@ -1,5 +1,5 @@
 import { pgTable, text, varchar, boolean, integer, timestamp, serial } from "drizzle-orm/pg-core";
-import settingSite from "./setting_site";
+import {settingSite} from "./setting_site";
 import grouping from "./grouping";
 import { relations } from "drizzle-orm";
 

@@ -1,9 +1,9 @@
 import { pgTable, varchar, text, integer, serial, timestamp } from "drizzle-orm/pg-core";
-import settingSite from "./setting_site";
+import {settingSite} from "./setting_site";
 import { relations } from "drizzle-orm";
 
 //منو ها
-const menu = pgTable('menu', {
+const sunSuperMenu = pgTable('menu', {
     id: serial('id').primaryKey(),
     settingSite: integer('setting_site').references(() => settingSite.id),
     title: text('title').notNull(),
@@ -14,14 +14,14 @@ const menu = pgTable('menu', {
     updatedAt: timestamp('updated_at').defaultNow().notNull()   
 })
 
-export const menuRelations = relations(menu, ({ one }) => ({
+export const menuRelations = relations(sunSuperMenu, ({ one }) => ({
     settingSite: one(settingSite, {
-        fields: [menu.settingSite],
+        fields: [sunSuperMenu.settingSite],
         references: [settingSite.id],
     }),
 }));    
 
-export type Menu = typeof menu.$inferSelect;
-export type NewMenu = typeof menu.$inferInsert;
+export type Menu = typeof sunSuperMenu.$inferSelect;
+export type NewMenu = typeof sunSuperMenu.$inferInsert;
 
-export default menu;
+export default sunSuperMenu;

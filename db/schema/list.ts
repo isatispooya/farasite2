@@ -1,7 +1,8 @@
 import { pgTable, text, serial, integer } from "drizzle-orm/pg-core";
-import settingSite from "./setting_site";
+import {settingSite} from "./setting_site";
 import { relations } from "drizzle-orm";
 
+//لیست برای اینترو لیست 
 const list = pgTable('list', {
     id: serial('id').primaryKey(),
     settingSite: integer('setting_site').references(() => settingSite.id),

@@ -1,6 +1,6 @@
 
-    import { serial, text, pgTable, integer, timestamp } from "drizzle-orm/pg-core";
-import settingSite from "./setting_site";
+import { serial, text, pgTable, integer, timestamp } from "drizzle-orm/pg-core";
+import {settingSite} from "./setting_site";
 import { relations } from "drizzle-orm";
 
 //محتوا

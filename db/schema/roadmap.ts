@@ -5,9 +5,10 @@ import {
   integer,
   varchar,
 } from "drizzle-orm/pg-core";
-import settingSite from "./setting_site";
+import {settingSite} from "./setting_site";
 import { relations } from "drizzle-orm";
 
+//رودمپ
 const roadmap = pgTable("roadmap", {
   id: serial("id").primaryKey(),
   settingSite: integer("setting_site").references(() => settingSite.id),
